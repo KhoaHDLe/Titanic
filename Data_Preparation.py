@@ -5,7 +5,7 @@
 # Define the Problem:
 # Gather the Data:
 # Prepare Data for Consumption:
-# The 4 C's of Data Cleaning: Correcting, Completing, Creating, and Converting
+    # The 4 C's of Data Cleaning: Correcting, Completing, Creating, and Converting
 # Perform Exploratory Analysis:
 # Model Data:
 # Validate and Implement Data Model:
@@ -162,3 +162,13 @@ data_raw.describe(include='all')
 
 
 #  Split Training and Testing Data ------------------------------------------------------------------------------
+
+train1_x, test1_x, train1_y, test1_y = model_selection.train_test_split(data1[data1_x_calc], data1[Target], random_state=0)
+train1_x_bin, test1_x_bin, train1_y_bin, test1_y_bin = model_selection.train_test_split(data1[data1_x_bin], data1[Target], random_state=0)
+train1_x_dummy, test1_x_dummy, train1_y_dummy, test1_y_dummy = model_selection.train_test_split(data1_dummy[data1_x_dummy], data1[Target], random_state=0)
+
+print("Data1 Shape: {}".format(data1.shape))
+print("Train1 Shape: {}".format(train1_x.shape))
+print("Test1 Shape: {}".format(test1_x.shape))
+
+train1_x_bin.head()
